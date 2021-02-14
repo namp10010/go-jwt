@@ -70,8 +70,8 @@ func main() {
 	fmt.Println("response:", res)
 }
 
+// authenticateUser authenticates the user and get the user ID (normally internal id)
 func authenticateUser(cred string) (string, error) {
-	// authenticate user and get userID (internal id)
 	var scopes []string
 	switch cred {
 	case "readOnlyUser:password":
@@ -124,6 +124,7 @@ func createJWT(userID string, scopes []string) (string, error) {
 	return jwt.Signed(signer).Claims(claims).CompactSerialize()
 }
 
+// callAPI calls the API using the generated JWT
 func callAPI(jwtStr string) (string, error) {
 	claims, err := authenticateJWT(jwtStr)
 	if err != nil {
@@ -142,6 +143,7 @@ func callAPI(jwtStr string) (string, error) {
 	return "api data", nil
 }
 
+// authenticateJWT authenticate the JWT and return the access claims with includes access scopes for given user
 func authenticateJWT(jwtStr string) (apiAccessClaims, error) {
 	token, err := jwt.ParseSigned(jwtStr)
 	if err != nil {
