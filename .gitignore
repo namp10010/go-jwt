@@ -1,1 +1,3 @@
 .idea/
+private_jwk.json
+public_jwk.json
