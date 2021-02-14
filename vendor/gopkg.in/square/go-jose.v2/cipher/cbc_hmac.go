@@ -134,7 +134,7 @@ func (ctx *cbcAEAD) Open(dst, nonce, ciphertext, data []byte) ([]byte, error) {
 	return ret, nil
 }
 
-// Compute an authentication tag
+// Compute an authorisation tag
 func (ctx *cbcAEAD) computeAuthTag(aad, nonce, ciphertext []byte) []byte {
 	buffer := make([]byte, uint64(len(aad))+uint64(len(nonce))+uint64(len(ciphertext))+8)
 	n := 0
