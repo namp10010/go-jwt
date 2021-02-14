@@ -1,6 +1,6 @@
 # Simple JWT golang implementation
 
-A simple golang implementation of JWT [JSON Web Tokens](https://jwt.io) authentication. I cannot remember if I get any part of this code from anywhere else (and google search didn't help much) so feel free to let me know so I can add credit info.
+A simple golang implementation of JWT [JSON Web Tokens](https://jwt.io) authentication. I cannot remember if I got any part of this code from anywhere else (and google search didn't help much) so feel free to let me know so I can add credit info.
 
 This code will demo how JWT is used to authenticate user and their resource access scopes.
 
