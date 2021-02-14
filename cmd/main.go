@@ -54,8 +54,8 @@ func init() {
 
 func main() {
 	//cred := "noAccessUser:password"
-	//cred := "readOnlyUser:password"
-	cred := "readWriteUser:password"
+	cred := "readOnlyUser:password"
+	// cred := "readWriteUser:password"
 
 	jwtStr, err := authenticateUser(cred)
 	if err != nil {
@@ -71,7 +71,7 @@ func main() {
 }
 
 func authenticateUser(cred string) (string, error) {
-	// authenticate user and get userID
+	// authenticate user and get userID (internal id)
 	var scopes []string
 	switch cred {
 	case "readOnlyUser:password":
